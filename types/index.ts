@@ -5,14 +5,15 @@ export interface IProduct {
   actual_price: string;
   base_price: string;
   filename: string;
-	discount?: number;
+  discount?: number;
 }
 
 export type TOrderBy = "asc" | "desc";
 
 export type TPaginateInputParams = {
   items: IProduct[];
-  params: URLSearchParams;
+  page: number;
+  limit: number;
   totalCount: number;
 };
 export type TSortInputParams = {
