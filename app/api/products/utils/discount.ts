@@ -1,4 +1,4 @@
-import { IProduct } from "#/app/types";
+import { IProduct } from "#/types";
 
 export const discount = (items: IProduct[]) =>
   items.map((item) => {

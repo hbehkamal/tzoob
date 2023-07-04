@@ -1,10 +1,8 @@
-import { TOrderBy } from "#/app/types";
 import rawData from "./product_list.json";
-import { sort, paginate, discount } from "./utils";
+import { sort, paginate, discount, parseParams } from "./utils";
 
 export const getData = ({ params }: { params: URLSearchParams }) => {
-  // Get the order of sorting - default set to 'asc'
-  const orderBy: TOrderBy = (params.get("order") as TOrderBy) || "asc";
+  const { orderBy, page, limit } = parseParams(params);
 
   const totalCount = rawData.length;
 
@@ -14,11 +12,12 @@ export const getData = ({ params }: { params: URLSearchParams }) => {
   // Implement pagination based on user inputs
   const { items: products, totalPagesCount } = paginate({
     items: sortedProducts,
-    params,
+    page,
+    limit,
     totalCount,
   });
 
-	// Calculate products discount percentage
+  // Calculate products discount percentage
   const calculateDiscount = discount(products);
 
   return {
