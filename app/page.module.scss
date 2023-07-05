@@ -1,10 +1,20 @@
-.main {
-  width: 100%;
-  padding: 80px;
-  .products {
-    width: 1200px;
-    margin: 0 auto;
+.product-list {
+  &__wrapper {
+    width: 100%;
+    padding: 80px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  &__top {
+    margin: 50px auto;
+    width: 1200px;
+  }
+  &-cards {
+    &__wrapper {
+      width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 }

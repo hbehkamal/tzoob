@@ -7,7 +7,7 @@ const nextConfig = {
 				hostname: 'images.booztx.com',
 			},
 		],
-	}
+	},
 }
 
 module.exports = nextConfig

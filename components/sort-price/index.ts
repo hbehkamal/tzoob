@@ -1,0 +1,1 @@
+export {default as SortPrice} from './sort-price';
