@@ -6,5 +6,8 @@ export const discount = (items: IProduct[]) =>
 
     if (actual_price === base_price) return item;
 
-    return { ...item, discount: (+actual_price * 100) / +base_price };
+    return {
+      ...item,
+      discount: 100 - Math.round((+actual_price * 100) / +base_price),
+    };
   });
