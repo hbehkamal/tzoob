@@ -1,4 +1,4 @@
-import { TSortInputParams } from "#/types";
+import { TSortInputParams } from "#/_types";
 
 export const sort = ({ items, orderBy = "asc" }: TSortInputParams) =>
   items.sort((a, b) =>

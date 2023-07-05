@@ -1,4 +1,4 @@
-import { TOrderBy } from "#/types";
+import { TOrderBy } from "#/_types";
 
 export const parseParams = (params: URLSearchParams) => {
   // Get sort order - default set to 'asc'

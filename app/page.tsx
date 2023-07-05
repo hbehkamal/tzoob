@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getProducts } from "#/app/_lib";
-import { ProductCard, SortPrice } from "#/components";
-import { IProduct, TOrderBy } from "#/types";
+import { getProducts } from "#/_lib";
+import { ProductCard, SortPrice } from "#/_components";
+import { IProduct, TOrderBy } from "#/_types";
 
 import styles from "./page.module.scss";
 

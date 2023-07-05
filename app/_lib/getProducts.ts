@@ -1,4 +1,4 @@
-import { IProduct, TOrderBy } from "#/types";
+import { IProduct, TOrderBy } from "#/_types";
 import { DEFAULT_PARAMS } from "./consts";
 
 type TGetProducts = (param?: {

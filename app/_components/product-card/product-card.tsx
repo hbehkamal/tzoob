@@ -1,4 +1,4 @@
-import { IProduct } from "#/types";
+import { IProduct } from "#/_types";
 import Image from "next/image";
 
 import styles from "./product-card.module.scss";

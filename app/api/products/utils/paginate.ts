@@ -1,4 +1,4 @@
-import { TPaginateInputParams } from "#/types";
+import { TPaginateInputParams } from "#/_types";
 
 export const paginate = ({
   items,
