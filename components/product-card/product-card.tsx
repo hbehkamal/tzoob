@@ -1,6 +1,8 @@
 import { IProduct } from "#/types";
 import Image from "next/image";
-import React from "react";
+
+import styles from "./product-card.module.scss";
+import { SaleTag } from "./sale-tag";
 
 const ProductCard = ({ product }: { product: IProduct }) => {
   const {
@@ -11,20 +13,45 @@ const ProductCard = ({ product }: { product: IProduct }) => {
     discount,
     brand_name,
   } = product;
+
+  const onSale = !!discount;
+
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <Image
-        width={400}
-        height={523}
-        src={filename}
-        alt={product_name}
-        // quality={1}
-      />
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <span>{product_name}</span>
-        <span>{base_price}</span>
-        <span>{discount}%</span>
-        <span>{brand_name}</span>
+    <div className={styles["productCard__container"]}>
+      <div className={styles["productCard__container--image"]}>
+        <Image
+          src={filename}
+          alt={product_name}
+          fill={true}
+          sizes="(max-width: 768px) 80vw, (max-width: 1200px) 35vw, 20vw"
+        />
+        {onSale && <SaleTag discount={discount} />}
+      </div>
+      <div className={styles["productCard__container--details"]}>
+        <div className={styles["productCard__container--details-name"]}>
+          {product_name}
+        </div>
+        <div className={styles["productCard__container--details-brand"]}>
+          {brand_name}
+        </div>
+        {onSale ? (
+          <div className={styles["productCard__container--details-sale"]}>
+            <span
+              className={styles["productCard__container--details-sale-base"]}
+            >
+              {base_price}
+            </span>
+            <span
+              className={styles["productCard__container--details-sale-price"]}
+            >
+              {actual_price}
+            </span>
+          </div>
+        ) : (
+          <div className={styles["productCard__container--details-price"]}>
+            {base_price}
+          </div>
+        )}
       </div>
     </div>
   );
