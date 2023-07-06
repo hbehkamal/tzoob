@@ -28,5 +28,13 @@ export const useProducts = () => {
       });
   }, [sortOrder, page, limit]);
 
-  return { products, setSortOrder, setPage, setLimit, totalCount };
+  return {
+    products,
+    setSortOrder,
+    page,
+    setPage,
+    setLimit,
+    totalCount,
+    totalPagesCount,
+  };
 };
