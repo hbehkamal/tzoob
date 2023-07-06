@@ -1,8 +1,8 @@
 "use client";
 
 import { Pagination, ProductCard, SortPrice } from "#/_components";
+import { Box, Container, Grid } from "@chakra-ui/react";
 
-import styles from "./page.module.scss";
 import { useProducts } from "./products.hook";
 
 const Products = () => {
@@ -21,23 +21,23 @@ const Products = () => {
   }
 
   return (
-    <main className={styles["product-list__wrapper"]}>
-      <div className={styles["product-list__header"]}>
+    <Container maxW="1200px" centerContent>
+      <Box my="6">
         <SortPrice setSortOrder={setSortOrder} />
-      </div>
-      <div className={styles["product-list-cards__wrapper"]}>
+      </Box>
+      <Grid templateColumns="repeat(4, 1fr)" gap={6}>
         {products.map((product) => {
           return <ProductCard product={product} key={product.id} />;
         })}
-      </div>
-      <div className={styles["product-list__footer"]}>
+      </Grid>
+      <Box my={6}>
         <Pagination
           page={page}
           setPage={setPage}
           totalPagesCount={totalPagesCount}
         />
-      </div>
-    </main>
+      </Box>
+    </Container>
   );
 };
 
