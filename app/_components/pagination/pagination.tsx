@@ -1,33 +1,37 @@
 import { FC } from "react";
 
+import { Button, Flex, Select } from "@chakra-ui/react";
+
 import { IPagination } from "./pagination.type";
 import { usePagination } from "./pagination.hook";
-import styles from "./pagination.module.scss";
 
 const Pagination: FC<IPagination> = ({ page, setPage, totalPagesCount }) => {
-  const { onPageChange, paginationRange, onNextClick, onPrevClick } =
-    usePagination({
-      page,
-      setPage,
-      totalPagesCount,
-    });
+  const { onPageChange, pages, onNextClick, onPrevClick } = usePagination({
+    page,
+    setPage,
+    totalPagesCount,
+  });
 
-  if (page === 0 || paginationRange.length < 2) {
+  if (page === 0 || pages.length < 2) {
     return null;
   }
 
   return (
-    <div className={styles["pagination__wrapper"]}>
-      <button onClick={onPrevClick}>PREVIOUS</button>
-      <select onChange={onPageChange}>
-        {paginationRange.map((item) => (
-          <option value={item} key={item}>
-            {item} / {totalPagesCount}
+    <Flex maxW="420px" mx="auto">
+      <Button onClick={onPrevClick} variant="outline" px={6}>
+        PREVIOUS
+      </Button>
+      <Select onChange={onPageChange} mx={3} cursor="pointer">
+        {pages.map(({ label, value }) => (
+          <option key={value} value={value}>
+            {label}
           </option>
         ))}
-      </select>
-      <button onClick={onNextClick}>NEXT</button>
-    </div>
+      </Select>
+      <Button onClick={onNextClick} variant="outline">
+        NEXT
+      </Button>
+    </Flex>
   );
 };
 
