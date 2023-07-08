@@ -1,7 +1,7 @@
 "use client";
 
-import { Pagination, ProductCard, SortPrice } from "#/_components";
 import { Box, Container, Grid } from "@chakra-ui/react";
+import { Pagination, ProductCard, SortPrice } from "#/_components";
 
 import { useProducts } from "./products.hook";
 
@@ -21,7 +21,7 @@ const Products = () => {
   }
 
   return (
-    <Container maxW="1200px" centerContent>
+    <Container maxW="1200px" centerContent bgColor="gray.100">
       <Box my="6">
         <SortPrice setSortOrder={setSortOrder} />
       </Box>
