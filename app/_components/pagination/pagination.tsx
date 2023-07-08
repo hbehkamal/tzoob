@@ -15,20 +15,43 @@ const Pagination: FC<IPagination> = ({ page, setPage, totalPagesCount }) => {
   if (page === 0 || pages.length < 2) {
     return null;
   }
+  console.log("page: ", { page, totalPagesCount });
 
   return (
     <Flex maxW="420px" mx="auto">
-      <Button onClick={onPrevClick} variant="outline" px={6}>
+      <Button
+        isDisabled={page == 1}
+        onClick={onPrevClick}
+        variant="outline"
+        colorScheme="gray"
+        borderColor="black"
+        fontWeight="400"
+        minW="100px"
+      >
         PREVIOUS
       </Button>
-      <Select onChange={onPageChange} mx={3} cursor="pointer">
+      <Select
+        onChange={onPageChange}
+        value={page}
+        mx={3}
+        cursor="pointer"
+        borderColor="black"
+      >
         {pages.map(({ label, value }) => (
           <option key={value} value={value}>
             {label}
           </option>
         ))}
       </Select>
-      <Button onClick={onNextClick} variant="outline">
+      <Button
+        isDisabled={page == totalPagesCount}
+        onClick={onNextClick}
+        variant="outline"
+        colorScheme="gray"
+        borderColor="black"
+        fontWeight="400"
+        minW="100px"
+      >
         NEXT
       </Button>
     </Flex>

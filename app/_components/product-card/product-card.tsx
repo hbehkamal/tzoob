@@ -61,7 +61,7 @@ const ProductCard = ({ product }: { product: IProduct }) => {
           </Tag>
           <Stack mt="6">
             <Tooltip label={product_name}>
-              <Heading size="md" noOfLines={1} mb="3">
+              <Heading as="h3" size="md" noOfLines={1} mb="3">
                 {product_name}
               </Heading>
             </Tooltip>

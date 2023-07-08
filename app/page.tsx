@@ -21,7 +21,7 @@ const Products = () => {
   }
 
   return (
-    <Container maxW="1200px" centerContent bgColor="gray.100">
+    <Container maxW="1200px" centerContent bgColor="gray.50">
       <Box my="6">
         <SortPrice setSortOrder={setSortOrder} />
       </Box>
