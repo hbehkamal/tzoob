@@ -5,6 +5,7 @@ import {
   PageLimitSelector,
   Pagination,
   ProductCard,
+  ProductCardLoading,
   SortPrice,
 } from "#/_components";
 
@@ -12,6 +13,7 @@ import { useProducts } from "./products.hook";
 
 const Products = () => {
   const {
+    isLoading,
     products,
     sortOrder,
     setSortOrder,
@@ -23,7 +25,8 @@ const Products = () => {
     page,
   } = useProducts();
 
-  if (!products || !products.length) {
+  console.log("isLoading", isLoading);
+  if (!isLoading && !products.length) {
     return <div>no product found</div>;
   }
 
@@ -40,10 +43,15 @@ const Products = () => {
           lg: "repeat(4, 1fr)",
         }}
         gap={6}
+        w="full"
       >
-        {products.map((product) => {
-          return <ProductCard product={product} key={product.id} />;
-        })}
+        {isLoading
+          ? Array.from({ length: 8 }, (_, index) => index).map((item) => (
+              <ProductCardLoading key={item} />
+            ))
+          : products.map((product) => {
+              return <ProductCard product={product} key={product.id} />;
+            })}
       </Grid>
       <Box my={6}>
         <Pagination
