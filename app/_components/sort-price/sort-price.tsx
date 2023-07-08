@@ -1,11 +1,12 @@
 import { FC } from "react";
 import {
-  Box,
   Button,
+  Flex,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
+  Text,
 } from "@chakra-ui/react";
 
 import { ISortPrice } from "./sort-price.type";
@@ -17,21 +18,36 @@ const SortPrice: FC<ISortPrice> = ({ sortOrder, setSortOrder }) => {
   };
 
   return (
-    <Box>
-      <Menu>
-        <MenuButton as={Button}>
-          Sort Price: {sortOrder == "asc" ? "Ascending" : "Descending"}
-        </MenuButton>
-        <MenuList>
-          <MenuItem onClick={handleSortChange("asc")}>
-            Price: Low to high
-          </MenuItem>
-          <MenuItem onClick={handleSortChange("desc")}>
-            Price: Hight to low
-          </MenuItem>
-        </MenuList>
-      </Menu>
-    </Box>
+    <Menu>
+      <MenuButton as={Button}>
+        <Flex w="full" justifyContent="space-between">
+          <Text>Sort Price: </Text>
+          {sortOrder == "asc" ? (
+            <>
+              <Text ml={1} mr={2}>
+                Ascending
+              </Text>{" "}
+              &#8593;
+            </>
+          ) : (
+            <>
+              <Text ml={1} mr={2}>
+                Descending
+              </Text>{" "}
+              &#8595;
+            </>
+          )}
+        </Flex>
+      </MenuButton>
+      <MenuList zIndex={3}>
+        <MenuItem onClick={handleSortChange("asc")}>
+          &#8593;<Text ml={2}>Price: Low to high</Text>
+        </MenuItem>
+        <MenuItem onClick={handleSortChange("desc")}>
+          &#8595;<Text ml={2}>Price: Hight to low</Text>
+        </MenuItem>
+      </MenuList>
+    </Menu>
   );
 };
 
