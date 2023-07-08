@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Grid } from "@chakra-ui/react";
+import { Box, Container, Flex, Grid } from "@chakra-ui/react";
 import { Pagination, ProductCard, SortPrice } from "#/_components";
 
 import { useProducts } from "./products.hook";
@@ -8,6 +8,7 @@ import { useProducts } from "./products.hook";
 const Products = () => {
   const {
     products,
+    sortOrder,
     setSortOrder,
     setPage,
     setLimit,
@@ -22,9 +23,9 @@ const Products = () => {
 
   return (
     <Container maxW="1200px" centerContent bgColor="gray.50">
-      <Box my="6">
-        <SortPrice setSortOrder={setSortOrder} />
-      </Box>
+      <Flex my="6">
+        <SortPrice setSortOrder={setSortOrder} sortOrder={sortOrder} />
+      </Flex>
       <Grid templateColumns="repeat(4, 1fr)" gap={6}>
         {products.map((product) => {
           return <ProductCard product={product} key={product.id} />;
