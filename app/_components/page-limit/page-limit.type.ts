@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction } from "react";
 
-export interface IPageLimitSelector {
+export interface IPageLimit {
   limit: number;
   setLimit: Dispatch<SetStateAction<number>>;
 }
-export interface IPageLimitSelectorHook {
+export interface IPageLimitHook {
   setLimit: Dispatch<SetStateAction<number>>;
 }

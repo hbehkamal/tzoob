@@ -2,7 +2,7 @@
 
 import { Box, Container, Flex, Grid } from "@chakra-ui/react";
 import {
-  PageLimitSelector,
+  PageLimit,
   Pagination,
   ProductCard,
   ProductCardLoading,
@@ -34,7 +34,7 @@ const Products = () => {
     <Container maxW="1280px" centerContent bgColor="gray.50">
       <Flex my="6" w="full" justifyContent="space-between" alignItems="center">
         <SortPrice setSortOrder={setSortOrder} sortOrder={sortOrder} />
-        <PageLimitSelector limit={limit} setLimit={setLimit} />
+        <PageLimit limit={limit} setLimit={setLimit} />
       </Flex>
       <Grid
         templateColumns={{
@@ -45,13 +45,13 @@ const Products = () => {
         gap={6}
         w="full"
       >
-        {isLoading
-          ? Array.from({ length: 8 }, (_, index) => index).map((item) => (
-              <ProductCardLoading key={item} />
-            ))
-          : products.map((product) => {
-              return <ProductCard product={product} key={product.id} />;
-            })}
+        {isLoading ? (
+          <ProductCardLoading />
+        ) : (
+          products.map((product) => {
+            return <ProductCard product={product} key={product.id} />;
+          })
+        )}
       </Grid>
       <Box my={6}>
         <Pagination

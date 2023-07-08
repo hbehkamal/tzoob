@@ -8,11 +8,11 @@ import {
   MenuList,
 } from "@chakra-ui/react";
 
-import { usePageLimitSelector } from "./page-limit-selector.hook";
-import { IPageLimitSelector } from "./page-limit-selector.type";
+import { usePageLimit } from "./page-limit.hook";
+import { IPageLimit } from "./page-limit.type";
 
-const PageLimitSelector: FC<IPageLimitSelector> = ({ limit, setLimit }) => {
-  const { handleChangeLimit } = usePageLimitSelector({ setLimit });
+const PageLimit: FC<IPageLimit> = ({ limit, setLimit }) => {
+  const { handleChangeLimit } = usePageLimit({ setLimit });
   return (
     <Box>
       <Menu>
@@ -27,4 +27,4 @@ const PageLimitSelector: FC<IPageLimitSelector> = ({ limit, setLimit }) => {
   );
 };
 
-export default PageLimitSelector;
+export default PageLimit;
