@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Flex, Grid } from "@chakra-ui/react";
+import { Box, Container, Flex, Grid, Heading } from "@chakra-ui/react";
 import {
   PageLimit,
   Pagination,
@@ -25,8 +25,12 @@ const Products = () => {
     page,
   } = useProducts();
 
-  if (!isLoading && !products.length) {
-    return <div>no product found</div>;
+  if (!isLoading && products.length) {
+    return (
+      <Container maxW="1280px" centerContent bgColor="gray.50">
+        <Heading mt="36">Oops! It seems the list is empty :(</Heading>
+      </Container>
+    );
   }
 
   return (
