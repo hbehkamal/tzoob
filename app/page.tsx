@@ -25,7 +25,6 @@ const Products = () => {
     page,
   } = useProducts();
 
-  console.log("isLoading", isLoading);
   if (!isLoading && !products.length) {
     return <div>no product found</div>;
   }
@@ -34,12 +33,18 @@ const Products = () => {
     <Container maxW="1280px" centerContent bgColor="gray.50">
       <Flex my="6" w="full" justifyContent="space-between" alignItems="center">
         <SortPrice setSortOrder={setSortOrder} sortOrder={sortOrder} />
-        <PageLimit limit={limit} setLimit={setLimit} />
+        <PageLimit
+          limit={limit}
+          setLimit={setLimit}
+          setPage={setPage}
+          page={page}
+          totalCount={totalCount}
+        />
       </Flex>
       <Grid
         templateColumns={{
           base: "1fr",
-          md: "repeat(2, 1fr)",
+          md: "repeat(3, 1fr)",
           lg: "repeat(4, 1fr)",
         }}
         gap={6}

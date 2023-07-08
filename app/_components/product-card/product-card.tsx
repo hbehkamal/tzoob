@@ -1,3 +1,4 @@
+import { FC } from "react";
 import {
   Badge,
   Card,
@@ -10,10 +11,12 @@ import {
   Text,
   Tooltip,
 } from "@chakra-ui/react";
-import { IProduct } from "#/_types";
 import Image from "next/image";
 
-const ProductCard = ({ product }: { product: IProduct }) => {
+import styles from "./product-card.module.scss";
+import { IProductCard } from "./product-card.type";
+
+const ProductCard: FC<IProductCard> = ({ product }) => {
   const {
     product_name,
     actual_price,
@@ -34,6 +37,7 @@ const ProductCard = ({ product }: { product: IProduct }) => {
             alt={product_name}
             width="250"
             height="327"
+            className={styles["product-image"]}
             // fill={true}
             // sizes="(max-width: 768px) 80vw, (max-width: 1200px) 35vw, 20vw"
           />

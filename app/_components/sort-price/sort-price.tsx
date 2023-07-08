@@ -19,7 +19,12 @@ const SortPrice: FC<ISortPrice> = ({ sortOrder, setSortOrder }) => {
 
   return (
     <Menu>
-      <MenuButton as={Button}>
+      <MenuButton
+        as={Button}
+        variant="outline"
+        colorScheme="gray"
+        borderColor="gray.400"
+      >
         <Flex w="full" justifyContent="space-between">
           <Text>Sort Price: </Text>
           {sortOrder == "asc" ? (
