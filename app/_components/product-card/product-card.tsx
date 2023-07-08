@@ -26,8 +26,8 @@ const ProductCard = ({ product }: { product: IProduct }) => {
   const onSale = !!discount;
 
   return (
-    <GridItem>
-      <Card w="250px" h="400px" cursor="pointer">
+    <GridItem w="full">
+      <Card maxH={{ base: "full", md: "450px" }} w="full" cursor="pointer">
         <CardBody>
           <Image
             src={filename}

@@ -15,7 +15,6 @@ const Pagination: FC<IPagination> = ({ page, setPage, totalPagesCount }) => {
   if (page === 0 || pages.length < 2) {
     return null;
   }
-  console.log("page: ", { page, totalPagesCount });
 
   return (
     <Flex maxW="420px" mx="auto">
