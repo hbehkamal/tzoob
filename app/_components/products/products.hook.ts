@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "#/_lib";
+import { DEFAULT_PARAMS, getProducts } from "#/_lib";
 import { IProduct, TOrderBy } from "#/_types";
 
 export const useProducts = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
-  const [sortOrder, setSortOrder] = useState<TOrderBy>("asc");
-  const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(8);
+  const [sortOrder, setSortOrder] = useState<TOrderBy>(DEFAULT_PARAMS.ORDER);
+  const [page, setPage] = useState(DEFAULT_PARAMS.PAGE);
+  const [limit, setLimit] = useState(DEFAULT_PARAMS.LIMIT);
   const [totalCount, setTotalCount] = useState(0);
   const [totalPagesCount, setTotalPagesCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     getProducts({ order: sortOrder, page, limit })
       .then(
         ({
@@ -25,14 +27,18 @@ export const useProducts = () => {
       )
       .catch((error) => {
         console.error("error: ", error);
-      });
+      })
+      .finally(() => setIsLoading(false));
   }, [sortOrder, page, limit]);
 
   return {
+    isLoading,
     products,
+    sortOrder,
     setSortOrder,
     page,
     setPage,
+    limit,
     setLimit,
     totalCount,
     totalPagesCount,
