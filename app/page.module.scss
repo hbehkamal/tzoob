@@ -47,9 +47,49 @@
   }
 
   &-footer {
-    height: 200px;
-    padding: 36px 64px;
-    background-color: $white;
+    // height: 200px;
+    padding: 64px 128px;
+    background-color: $primary-default;
+    color: $gray-light;
     border-top: 1px solid $gray-default;
+    display: flex;
+    justify-content: space-around;
+    &--menu {
+      flex: 1;
+      text-align: center;
+      list-style-type: none;
+      border-right: 1px solid $primary-light;
+
+      &:last-child {
+        border-right: unset;
+      }
+
+      li {
+        cursor: pointer;
+        margin: 0 16px;
+        padding: 8px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @include md {
+    &-footer {
+      padding: 48px 64px;
+      flex-direction: column;
+      font-size: 18px;
+      &--menu {
+        border-bottom: 1px solid $primary-light;
+        border-right: unset;
+        padding: 24px 0;
+
+        &:last-child {
+          border-bottom: unset;
+        }
+      }
+    }
   }
 }
