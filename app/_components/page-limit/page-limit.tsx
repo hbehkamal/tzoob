@@ -19,7 +19,7 @@ const PageLimit: FC<IPageLimit> = ({
   page,
   totalCount,
 }) => {
-  const { handleChangeLimit, range, isMobile } = usePageLimit({
+  const { handleChangeLimit, range } = usePageLimit({
     limit,
     setLimit,
     setPage,
@@ -27,11 +27,14 @@ const PageLimit: FC<IPageLimit> = ({
   });
   return (
     <Flex alignItems="center">
-      {!isMobile && (
-        <Text mr={2} fontSize="sm" color="gray.400">
-          Showing {range.start}-{range.end} of {totalCount}
-        </Text>
-      )}
+      <Text
+        display={{ base: "none", md: "block" }}
+        mr={2}
+        fontSize="sm"
+        color="gray.400"
+      >
+        Showing {range.start}-{range.end} of {totalCount}
+      </Text>
       <Menu>
         <MenuButton
           as={Button}
