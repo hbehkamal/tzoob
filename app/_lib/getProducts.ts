@@ -21,7 +21,7 @@ const getProducts: TGetProducts = async (params) => {
   let data;
   try {
     const res = await fetch(
-      `http://localhost:3000/api/products?page=${page}&limit=${limit}&order=${order}`
+      `${process.env.NEXT_PUBLIC_API_BASE}products?page=${page}&limit=${limit}&order=${order}`
     );
     data = await res.json();
   } catch (error) {
