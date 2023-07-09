@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import { DEFAULT_PARAMS, getProducts } from "#/_lib";
 import { IProduct, TOrderBy } from "#/_types";
 
-export const useProducts = () => {
-  const [products, setProducts] = useState<IProduct[]>([]);
+export const useProducts = ({
+  firstRenderProducts,
+}: {
+  firstRenderProducts: IProduct[];
+}) => {
+  const [products, setProducts] = useState<IProduct[]>(firstRenderProducts);
   const [sortOrder, setSortOrder] = useState<TOrderBy>(DEFAULT_PARAMS.ORDER);
   const [page, setPage] = useState(DEFAULT_PARAMS.PAGE);
   const [limit, setLimit] = useState(DEFAULT_PARAMS.LIMIT);

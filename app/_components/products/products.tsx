@@ -10,8 +10,13 @@ import {
 } from "#/_components";
 
 import { useProducts } from "./products.hook";
+import { IProduct } from "#/_types";
 
-const Products = () => {
+const Products = ({
+  firstRenderProducts,
+}: {
+  firstRenderProducts: IProduct[];
+}) => {
   const {
     isLoading,
     products,
@@ -23,7 +28,7 @@ const Products = () => {
     totalCount,
     totalPagesCount,
     page,
-  } = useProducts();
+  } = useProducts({ firstRenderProducts });
 
   if (!isLoading && !products.length) {
     return (
