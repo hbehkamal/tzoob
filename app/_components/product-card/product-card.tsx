@@ -16,7 +16,7 @@ import Image from "next/image";
 import styles from "./product-card.module.scss";
 import { IProductCard } from "./product-card.type";
 
-const ProductCard: FC<IProductCard> = ({ product }) => {
+const ProductCard: FC<IProductCard> = ({ product, index }) => {
   const {
     product_name,
     actual_price,
@@ -36,10 +36,9 @@ const ProductCard: FC<IProductCard> = ({ product }) => {
             src={filename}
             alt={product_name}
             width="250"
-            height="327"
+            height="328"
             className={styles["product-image"]}
-            // fill={true}
-            // sizes="(max-width: 768px) 80vw, (max-width: 1200px) 35vw, 20vw"
+            priority={index === 0} // This will fix LCP issue
           />
           {onSale && (
             <Badge

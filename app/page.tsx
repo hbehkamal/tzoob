@@ -25,7 +25,7 @@ const Products = () => {
     page,
   } = useProducts();
 
-  if (!isLoading && products.length) {
+  if (!isLoading && !products.length) {
     return (
       <Container maxW="1280px" centerContent bgColor="gray.50">
         <Heading mt="36">Oops! It seems the list is empty :(</Heading>
@@ -57,8 +57,10 @@ const Products = () => {
         {isLoading ? (
           <ProductCardLoading />
         ) : (
-          products.map((product) => {
-            return <ProductCard product={product} key={product.id} />;
+          products.map((product, index) => {
+            return (
+              <ProductCard product={product} key={product.id} index={index} />
+            );
           })
         )}
       </Grid>
