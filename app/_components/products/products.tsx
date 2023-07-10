@@ -25,13 +25,13 @@ const Products = () => {
     page,
   } = useProducts();
 
-  // if (!isLoading && !products.length) {
-  return (
-    <Container maxW="1280px" centerContent bgColor="gray.50">
-      <Heading my="36">Oops! It seems the list is empty :(</Heading>
-    </Container>
-  );
-  // }
+  if (!isLoading && !products.length) {
+    return (
+      <Container maxW="1280px" centerContent bgColor="gray.50">
+        <Heading my="36">Oops! It seems the list is empty :(</Heading>
+      </Container>
+    );
+  }
 
   return (
     <>
