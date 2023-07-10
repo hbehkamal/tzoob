@@ -1,6 +1,7 @@
 import { ChangeEventHandler, useMemo } from "react";
 
 import { IPagination } from "./pagination.type";
+import { scrollToTop } from "#/_lib";
 
 export const usePagination = ({
   page,
@@ -9,7 +10,6 @@ export const usePagination = ({
 }: IPagination) => {
   const pages = useMemo(() => {
     return Array.from({ length: totalPagesCount }, (undefined, index) => {
-
       const value = index + 1;
       const label = `${value} / ${totalPagesCount}`;
 
@@ -21,10 +21,18 @@ export const usePagination = ({
     target: { value },
   }) => {
     setPage(+value);
+    scrollToTop();
   };
 
-  const onNextClick = () => setPage(page + 1);
-  const onPrevClick = () => setPage(page - 1);
+  const onNextClick = () => {
+    setPage(page + 1);
+    scrollToTop();
+  };
+
+  const onPrevClick = () => {
+    setPage(page - 1);
+    scrollToTop();
+  };
 
   return {
     onPageChange,

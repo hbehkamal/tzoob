@@ -55,7 +55,7 @@ const Products = () => {
         w="full"
       >
         {isLoading ? (
-          <ProductCardLoading />
+          <ProductCardLoading length={limit} />
         ) : (
           products.map((product, index) => {
             return (
