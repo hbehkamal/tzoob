@@ -35,14 +35,21 @@ const PageLimit: FC<IPageLimit> = ({
       >
         Showing {range.start}-{range.end} of {totalCount}
       </Text>
-      <Menu>
+      <Menu autoSelect={false}>
         <MenuButton
           as={Button}
           variant="outline"
           colorScheme="gray"
           borderColor="gray.400"
+          fontWeight="light"
+          size={{ base: "sm", md: "md" }}
         >
-          Page limit: {limit}
+          <Flex>
+            Page limit:{" "}
+            <Text ml={2} fontWeight="bold">
+              {limit}
+            </Text>
+          </Flex>
         </MenuButton>
         <MenuList zIndex={3}>
           <MenuItem onClick={handleChangeLimit(8)}>8</MenuItem>

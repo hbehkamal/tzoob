@@ -18,25 +18,27 @@ const SortPrice: FC<ISortPrice> = ({ sortOrder, setSortOrder }) => {
   };
 
   return (
-    <Menu>
+    <Menu autoSelect={false}>
       <MenuButton
         as={Button}
         variant="outline"
         colorScheme="gray"
         borderColor="gray.400"
+        fontWeight="light"
+        size={{ base: "sm", md: "md" }}
       >
         <Flex w="full" justifyContent="space-between">
           <Text>Sort Price: </Text>
           {sortOrder == "asc" ? (
             <>
-              <Text ml={1} mr={2}>
+              <Text ml={1} mr={2} fontWeight="bold">
                 Ascending
               </Text>{" "}
               &#8593;
             </>
           ) : (
             <>
-              <Text ml={1} mr={2}>
+              <Text ml={1} mr={2} fontWeight="bold">
                 Descending
               </Text>{" "}
               &#8595;
