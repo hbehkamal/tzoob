@@ -87,6 +87,8 @@ Initially, the application scored 76 in the performance category. However, I ded
 
 Through a combination of code refactoring, implementing performance best practices, and optimizing resource loading, I successfully improved the application's performance. As a result, the Lighthouse performance score increased to an impressive 97.
 
+You can also check out [GT Metrix](https://gtmetrix.com/reports/tzoob.vercel.app/ewhUVHgT/) & [Web Page Test](https://www.webpagetest.org/result/230711_AiDcYA_5SS/) reports.
+
 ## User Experience
 To provide a seamless and engaging experience during data loading, I incorporated a loading skeleton. This feature ensures that users are aware that content is being fetched and displayed, preventing them from perceiving any delays as a result of data retrieval. By visually representing the structure of the content being loaded, the loading skeleton maintains a consistent and intuitive user interface.
 
