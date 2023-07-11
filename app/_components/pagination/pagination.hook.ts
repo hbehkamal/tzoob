@@ -1,7 +1,7 @@
 import { ChangeEventHandler, useMemo } from "react";
 
 import { IPagination } from "./pagination.type";
-import { scrollToTop } from "#/_lib";
+import { scrollToTop } from "#/_utils";
 
 export const usePagination = ({
   page,

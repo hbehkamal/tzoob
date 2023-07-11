@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
 import { IPageLimit } from "./page-limit.type";
-import { DEFAULT_PARAMS } from "#/_lib";
+import { DEFAULT_PARAMS } from "#/_constants";
 
 export const usePageLimit = ({
   limit,

@@ -1,5 +1,5 @@
 import { IProduct, TOrderBy } from "#/_types";
-import { DEFAULT_PARAMS } from "./consts";
+import { DEFAULT_PARAMS } from "#/_constants";
 
 type TGetProducts = (param: {
   page?: number;

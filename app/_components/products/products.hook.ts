@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { DEFAULT_PARAMS, getProducts } from "#/_lib";
+import { DEFAULT_PARAMS } from "#/_constants";
 import { IProduct, TOrderBy } from "#/_types";
+import { getProducts } from "#/_api";
 
 export const useProducts = () => {
   const [products, setProducts] = useState<IProduct[]>([]);

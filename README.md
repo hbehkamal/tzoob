@@ -31,7 +31,7 @@ It also deployed here: [tzoob.vercel.app](https://tzoob.vercel.app/)
 ## Features
 - **Responsive design**: Enjoy a seamless browsing experience on any device, including mobiles, tablets, and desktops.
 - **Sorting options**: Easily organize products based on their price, with the ability to sort in ascending or descending order.
-- **Customizable page limit**: Set the number of products displayed per page according to your preference.
+- **Customizable page limit**: Set the number of products displayed per page according to user preference.
 - **User-friendly pagination**: Navigate through different pages effortlessly using a pagination system inspired by the intuitive design of boozt.com.
 
 ## Technologies Used
@@ -56,9 +56,11 @@ All directories inside `app` except `api` started with an underscore to mark the
 	* `page.module.scss` This file contains the specific styles for the layout.tsx component.
 
 	* `api` This directory is specifically dedicated to writing API endpoints and handling their associated logic.
+	* `_api` This directory is used to handle API-related functionality, such as making HTTP requests to API endpoints.
 	* `_containers` This directory is dedicated to defining containers for different pages within the application.
 	* `_components` These components are designed to be modular and independent, allowing for easy integration and maintenance.
-	* `_lib` It provides a centralized location for commonly used code snippets and helper functions.
+	* `_constants` This directory is used to store constants or configuration values that are used throughout the project.
+	* `_utils` This directory is used to store utility functions that can be reused across different parts of the project.
 	* `_providers` Providers are responsible for managing and sharing state or data across different parts of the application, ensuring consistent and efficient data flow.
 	* `_styles` This directory contains global stylesheets, Sass mixins, and variables that define the overall visual appearance and styling of the application.
 	* `_types` It provides a centralized location for defining custom types, interfaces, and type aliases, ensuring type safety and code clarity.

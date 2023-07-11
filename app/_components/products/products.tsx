@@ -64,13 +64,15 @@ const Products = () => {
           })
         )}
       </Grid>
-      <Box my={6}>
-        <Pagination
-          page={page}
-          setPage={setPage}
-          totalPagesCount={totalPagesCount}
-        />
-      </Box>
+      {!isLoading && (
+        <Box my={6}>
+          <Pagination
+            page={page}
+            setPage={setPage}
+            totalPagesCount={totalPagesCount}
+          />
+        </Box>
+      )}
     </>
   );
 };

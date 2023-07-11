@@ -71,12 +71,12 @@ const ProductCard: FC<IProductCard> = ({ product, index }) => {
             {onSale ? (
               <Flex>
                 <Text color="gray.500" mr={2} textDecor="line-through">
-                  &#36;{base_price}
+                  ${base_price}
                 </Text>
-                <Text color="gray.900">&#36;{actual_price}</Text>
+                <Text color="gray.900">${actual_price}</Text>
               </Flex>
             ) : (
-              <Text color="gray.900">&#36;{base_price}</Text>
+              <Text color="gray.900">${base_price}</Text>
             )}
           </Stack>
         </CardBody>

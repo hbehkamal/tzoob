@@ -3,7 +3,7 @@
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider } from "@chakra-ui/react";
 
-const ProductsProvider = ({ children }: { children: React.ReactNode }) => {
+const AppProviders = ({ children }: { children: React.ReactNode }) => {
   return (
     <CacheProvider>
       <ChakraProvider>{children}</ChakraProvider>
@@ -11,4 +11,4 @@ const ProductsProvider = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default ProductsProvider;
+export default AppProviders;

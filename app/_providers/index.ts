@@ -1,1 +1,1 @@
-export { default as ProductsProvider } from "./products.provider";
+export { default as AppProviders } from "./products.provider";
