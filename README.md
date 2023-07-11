@@ -11,10 +11,9 @@ By incorporating these technologies into the project, I aimed to demonstrate my 
 - [Usage](#usage)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [Credits](#credits)
-- [License](#license)
-- [Contact Information](#contact-information)
+- [File & Folder Structure](#file--folder-structure)
+- [Performance](#performance)
+- [User Experience](#user-experience)
 
 ## Installation
 1. Install dependencies: `npm install` or `yarn` or `pnpm install`
@@ -26,6 +25,8 @@ or you can run the development server via `npm run dev` or `yarn run dev` or `pn
 ## Usage
 1. open [http://localhost:3000](http://localhost:3000) with your browser
 2. Enjoy :)
+
+It also deployed here: [tzoob.vercel.app](https://tzoob.vercel.app/)
 
 ## Features
 - **Responsive design**: Enjoy a seamless browsing experience on any device, including mobiles, tablets, and desktops.
