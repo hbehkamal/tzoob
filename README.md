@@ -17,15 +17,15 @@ By incorporating these technologies into the project, I aimed to demonstrate my 
 
 ## Installation
 1. Install dependencies: `npm install` or `yarn` or `pnpm install`
-2. Build the application: `npm run build` or `yarn run build` or `pnpm build`
-3. Run built version: `npm run start` or `yarn run start` or `pnpm start`
+2. Rename `.env.sample` to `.env`
+3. Build the application: `npm run build` or `yarn run build` or `pnpm build`
+4. Run built version: `npm run start` or `yarn run start` or `pnpm start`
 
 or you can run the development server via `npm run dev` or `yarn run dev` or `pnpm dev`
 
 ## Usage
 1. open [http://localhost:3000](http://localhost:3000) with your browser
-2. Rename `.env.sample` to `.env`
-3. Enjoy :)
+2. Enjoy :)
 
 It also deployed here: [tzoob.vercel.app](https://tzoob.vercel.app/)
 
