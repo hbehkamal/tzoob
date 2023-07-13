@@ -18,7 +18,7 @@ By incorporating these technologies into the project, I aimed to demonstrate my 
 - [User Experience](#user-experience)
 
 ## Installation
-1. Install dependencies: `npm install` or `yarn` or `pnpm install`
+1. Install dependencies: `npm install` or `yarn install` or `pnpm install`
 2. Rename `.env.sample` to `.env`
 3. Build the application: `npm run build` or `yarn run build` or `pnpm build`
 4. Run built version: `npm run start` or `yarn run start` or `pnpm start`
