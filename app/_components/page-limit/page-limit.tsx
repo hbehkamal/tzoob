@@ -22,8 +22,8 @@ const PageLimit: FC<IPageLimit> = ({
   const { handleChangeLimit, range } = usePageLimit({
     limit,
     setLimit,
-    setPage,
     page,
+    setPage,
   });
   return (
     <Flex alignItems="center">

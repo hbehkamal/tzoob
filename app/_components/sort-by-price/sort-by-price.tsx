@@ -9,13 +9,11 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import { ISortPrice } from "./sort-price.type";
-import { TOrderBy } from "#/_types";
+import { ISortByPrice } from "./sort-by-price.type";
+import { useSortByPrice } from "./sort-by-price.hook";
 
-const SortPrice: FC<ISortPrice> = ({ sortOrder, setSortOrder }) => {
-  const handleSortChange = (order: TOrderBy) => () => {
-    setSortOrder(order);
-  };
+const SortByPrice: FC<ISortByPrice> = ({ sortOrder, setSortOrder }) => {
+  const { handleSortChange } = useSortByPrice({ setSortOrder });
 
   return (
     <Menu autoSelect={false}>
@@ -58,4 +56,4 @@ const SortPrice: FC<ISortPrice> = ({ sortOrder, setSortOrder }) => {
   );
 };
 
-export default SortPrice;
+export default SortByPrice;

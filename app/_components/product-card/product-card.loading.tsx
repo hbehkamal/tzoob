@@ -1,9 +1,11 @@
 import { Card, CardBody, GridItem, Skeleton } from "@chakra-ui/react";
 
+import { createArrayByLength } from "#/_utils";
+
 const ProductCardLoading = ({ length }: { length: number }) => {
   return (
     <>
-      {Array.from({ length }, (_, index) => index).map((item) => (
+      {createArrayByLength(length).map((item) => (
         <GridItem w="full" key={item}>
           <Card minH={{ base: "full", md: "450px" }} w="full">
             <CardBody>

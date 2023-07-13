@@ -1,0 +1,48 @@
+@import "#/_styles/variables.scss";
+@import "#/_styles/mixins.scss";
+
+.home-page {
+  &-header {
+    background-color: $white;
+    color: $black;
+    padding: 36px 48px;
+    border-bottom: 1px solid $gray-default;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+    &--logo {
+      cursor: pointer;
+      font-size: 36px;
+      font-weight: 900;
+      margin: 0 48px;
+      span {
+        font-size: 12px;
+        font-weight: 700;
+      }
+    }
+
+    &--menu {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-evenly;
+
+      li {
+        cursor: pointer;
+        margin: 0 16px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    // Remove menu on devices smaller than 768px
+    @include md {
+      &--menu {
+        display: none;
+      }
+    }
+  }
+}

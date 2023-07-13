@@ -1,7 +1,7 @@
 import { ChangeEventHandler, useMemo } from "react";
 
 import { IPagination } from "./pagination.type";
-import { scrollToTop } from "#/_utils";
+import { scrollToTop, createArrayByLength } from "#/_utils";
 
 export const usePagination = ({
   page,
@@ -9,7 +9,7 @@ export const usePagination = ({
   totalPagesCount,
 }: IPagination) => {
   const pages = useMemo(() => {
-    return Array.from({ length: totalPagesCount }, (undefined, index) => {
+    return createArrayByLength(totalPagesCount).map((index) => {
       const value = index + 1;
       const label = `${value} / ${totalPagesCount}`;
 

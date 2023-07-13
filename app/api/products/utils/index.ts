@@ -1,4 +1,4 @@
 export * from "./sort";
 export * from "./paginate";
-export * from "./discount";
+export * from "./calculateDiscount";
 export * from "./parseParams";

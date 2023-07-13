@@ -1,6 +1,6 @@
 import { IProduct } from "#/_types";
 
-export const discount = (items: IProduct[]) =>
+export const calculateDiscount = (items: IProduct[]) =>
   items.map((item) => {
     const { actual_price, base_price } = item;
 

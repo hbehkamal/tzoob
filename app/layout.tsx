@@ -1,6 +1,6 @@
 import "#/_styles/globals.scss";
-
-import styles from "./page.module.scss";
+import { Footer } from "#/_components/footer";
+import { Header } from "#/_components/header";
 
 export const metadata = {
   title: "Tzoob",
@@ -15,46 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header className={styles["home-page-header"]}>
-          <ul className={styles["home-page-header--menu"]}>
-            <li>Women</li>
-            <li>Men</li>
-            <li>Children</li>
-          </ul>
-          <div className={styles["home-page-header--logo"]}>
-            Boozt<span>.com</span>
-          </div>
-          <ul className={styles["home-page-header--menu"]}>
-            <li>Home</li>
-            <li>Beauty</li>
-            <li>Sports</li>
-          </ul>
-        </header>
+        <Header />
         {children}
-        <footer className={styles["home-page-footer"]}>
-          <ul className={styles["home-page-footer--menu"]}>
-            <li>Women</li>
-            <li>Men</li>
-            <li>Children</li>
-          </ul>
-          <ul className={styles["home-page-footer--menu"]}>
-            <li>Home</li>
-            <li>Beauty</li>
-            <li>Sports</li>
-          </ul>
-          <ul className={styles["home-page-footer--menu"]}>
-            <li>Lorem</li>
-            <li>Ipsum</li>
-            <li>Dummy</li>
-            <li>Text</li>
-          </ul>
-          <ul className={styles["home-page-footer--menu"]}>
-            <li>Printing</li>
-            <li>Typesetting </li>
-            <li>Industry</li>
-            <li>Standard</li>
-          </ul>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

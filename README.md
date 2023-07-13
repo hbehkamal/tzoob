@@ -6,6 +6,8 @@ In this assignment, I aimed to leverage my existing knowledge while embracing th
 By incorporating these technologies into the project, I aimed to demonstrate my versatility and proficiency in working with a diverse range of tools. I hope you enjoy exploring this project as much as I enjoyed working on it!
 
 
+**DEMO:** [tzoob.vercel.app](https://tzoob.vercel.app/)
+
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -27,7 +29,6 @@ or you can run the development server via `npm run dev` or `yarn run dev` or `pn
 1. open [http://localhost:3000](http://localhost:3000) with your browser
 2. Enjoy :)
 
-It also deployed here: [tzoob.vercel.app](https://tzoob.vercel.app/)
 
 ## Features
 - **Responsive design**: Enjoy a seamless browsing experience on any device, including mobiles, tablets, and desktops.
@@ -52,8 +53,8 @@ In certain areas of the project, where I couldn't utilize Chakra-UI, I showcased
 ## File & Folder Structure
 All directories inside `app` except `api` started with an underscore to mark them as private and non-routable
 * `app` (root directory)
-	* `page.tsx` This file serves as the root route of the application. It is responsible for importing and rendering the corresponding container component for the page.
-	* `layout.tsx` This file is responsible for rendering the reusable parts of the main layout, such as the header and footer, across all the pages that utilize this layout.
+	* `page.tsx` This file serves as the root route of the application. It is responsible for importing and rendering the app providers and corresponding container component for the page.
+	* `layout.tsx` This file is responsible for rendering the reusable parts of the main layout as a server component, such as the header and footer, across all the pages that utilize this layout.
 	* `page.module.scss` This file contains the specific styles for the layout.tsx component.
 
 	* `api` This directory is specifically dedicated to writing API endpoints and handling their associated logic.

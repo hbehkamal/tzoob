@@ -1,5 +1,5 @@
 import rawData from "./product_list.json";
-import { sort, paginate, discount, parseParams } from "./utils";
+import { sort, paginate, calculateDiscount, parseParams } from "./utils";
 
 export const getData = ({ params }: { params: URLSearchParams }) => {
   const { orderBy, page, limit } = parseParams(params);
@@ -10,7 +10,7 @@ export const getData = ({ params }: { params: URLSearchParams }) => {
   const sortedProducts = sort({ items: rawData, orderBy });
 
   // Implement pagination based on user inputs
-  const { items: products, totalPagesCount } = paginate({
+  const { items, totalPagesCount } = paginate({
     items: sortedProducts,
     page,
     limit,
@@ -18,11 +18,11 @@ export const getData = ({ params }: { params: URLSearchParams }) => {
   });
 
   // Calculate products discount percentage
-  const calculateDiscount = discount(products);
+  const products = calculateDiscount(items);
 
   return {
     totalCount,
     totalPagesCount,
-    data: calculateDiscount,
+    data: products,
   };
 };
